@@ -3,8 +3,8 @@
 pushd `dirname $0`
 
 #DRY="-n"
-HOST=yum.qubes-os.org
-HOST_BASEDIR=/pub/qubes/repo/yum
+[ -z "$HOST" ] && HOST=yum.qubes-os.org
+[ -z "$HOST_BASEDIR" ] && HOST_BASEDIR=/pub/qubes/repo/yum
 if [ -n "$1" ]; then
     RELS_TO_SYNC=`basename "$1"`
 else
